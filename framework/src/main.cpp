@@ -87,6 +87,7 @@ public :
     }
 
 
+<<<<<<< HEAD
 
 
 
@@ -131,6 +132,10 @@ public :
 
 
 
+=======
+    Box testBox(math3d::point(.3,.3,.3),math3d::point(.4,.5,.6));
+    Sphere testSphere (math3d::point(.3,.3,.3),.4);
+>>>>>>> branch 'master' of https://github.com/techprolet/yart.git
 
     // save final image
     image.save();

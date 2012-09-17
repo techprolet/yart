@@ -32,7 +32,10 @@ HEADER =\
 	include/shape.hpp \
 	include/box.hpp \
 	include/sphere.hpp \
+<<<<<<< HEAD
 	include/sdfreader.hpp \
+=======
+>>>>>>> branch 'master' of https://github.com/techprolet/yart.git
         $(NULL)
 
 SOURCE =\
@@ -47,7 +50,10 @@ SOURCE =\
 	src/shape.cpp \
 	src/box.cpp \
 	src/sphere.cpp \
+<<<<<<< HEAD
 	src/sdfreader.cpp \
+=======
+>>>>>>> branch 'master' of https://github.com/techprolet/yart.git
 	$(NULL)
 
 PROGRAMSOURCE =\
