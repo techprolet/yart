@@ -12,6 +12,13 @@
 #include <matrix.hpp>
 #include <point.hpp>
 
+
+#include <box.hpp>
+#include <sphere.hpp>
+
+
+
+
 #ifdef __APPLE__
   #include <GLUT/glut.h>
 #else
@@ -23,6 +30,10 @@
   #include <windows.h>
   #include <process.h>
 #endif
+
+
+
+#include <sdfreader.hpp>
 
 // this is a dummy raytrace application
 class application
@@ -74,6 +85,52 @@ public :
         image.write(p);
       }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //techprolet starts here
+
+
+    Box testBox(math3d::point(.3,.3,.3),math3d::point(.4,.5,.6));
+    Sphere testSphere (math3d::point(.3,.3,.3),.4);
+
+    SdfReader sdfReader ("samples/example1.sdf");
+
+
+
+
+
+
+
+    //techprolet ends here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // save final image
     image.save();

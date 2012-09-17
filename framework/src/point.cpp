@@ -22,6 +22,7 @@
 #include <cmath>     // std::abs
 #include <limits>    // std::numeric_limits
 #include <ostream>   // std::ostream
+#include <math.h>
 
 // includes, project
 
@@ -125,6 +126,15 @@ namespace math3d {
     static point origin_(0.0, 0.0, 0.0);
     return origin_;
   }
+
+
+
+  double
+  point::distanceFrom (const point & p) const{
+      return sqrt (pow(data_[0]-p[0],2)+pow(data_[1]-p[1],2)+pow(data_[2]-p[2],2));
+  }
+
+
 
   point
   operator-(point const& rhs)

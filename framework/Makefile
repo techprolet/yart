@@ -29,6 +29,10 @@ HEADER =\
 	include/vector.hpp \
 	include/point.hpp \
 	include/matrix.hpp \
+	include/shape.hpp \
+	include/box.hpp \
+	include/sphere.hpp \
+	include/sdfreader.hpp \
         $(NULL)
 
 SOURCE =\
@@ -40,6 +44,10 @@ SOURCE =\
 	src/vector.cpp \
 	src/matrix.cpp \
 	src/main.cpp \
+	src/shape.cpp \
+	src/box.cpp \
+	src/sphere.cpp \
+	src/sdfreader.cpp \
 	$(NULL)
 
 PROGRAMSOURCE =\
