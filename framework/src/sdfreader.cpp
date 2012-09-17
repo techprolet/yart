@@ -27,6 +27,8 @@ void SdfReader::load(char* sdfFile){
 
 void SdfReader::loadSdf(){
 	std::ifstream ifs (sdfFile_ , std::ifstream::in );
+	std::cout<<sdfFile_<<std::endl;
+//	std::cout<<"nai re!"<<std::endl;
 	while (ifs.good()){
 
 		std::string sdfLine;

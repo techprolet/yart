@@ -50,8 +50,4 @@
 	<storageModule moduleId="refreshScope" versionNumber="1">
 		<resource resourceType="PROJECT" workspacePath="/framework"/>
 	</storageModule>
-<<<<<<< HEAD
-	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
-=======
->>>>>>> branch 'master' of https://github.com/techprolet/yart.git
 </cproject>
