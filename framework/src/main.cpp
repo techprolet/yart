@@ -12,6 +12,13 @@
 #include <matrix.hpp>
 #include <point.hpp>
 
+
+#include <box.hpp>
+#include <sphere.hpp>
+
+
+
+
 #ifdef __APPLE__
   #include <GLUT/glut.h>
 #else
@@ -74,6 +81,10 @@ public :
         image.write(p);
       }
     }
+
+
+    Box testBox(math3d::point(.3,.3,.3),math3d::point(.4,.5,.6));
+    Sphere testSphere (math3d::point(.3,.3,.3),.4);
 
     // save final image
     image.save();

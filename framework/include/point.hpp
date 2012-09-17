@@ -48,6 +48,9 @@ namespace math3d {
 
     static point const& origin();     // p[0,0,0,1]
 
+
+    double distanceFrom (const point & p) const;
+
   private:
     
     double data_[4];
