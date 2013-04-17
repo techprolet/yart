@@ -19,17 +19,9 @@
 
 
 
-#ifdef __APPLE__
-  #include <GLUT/glut.h>
-#else
-  #include <GL/glut.h>
-#endif
+#include  <GL/glut.h>
 
-#if CODEBLOCKS_WIN32
-  #include <boost/function.hpp>
-  #include <windows.h>
-  #include <process.h>
-#endif
+
 
 
 
@@ -40,13 +32,7 @@ class application
 {
 public :
 
-#if CODEBLOCKS_WIN32
-  static DWORD WINAPI invoke ( void* o)
-  {
-    application* a = static_cast<application*>(o);
-    a->start();
-  }
-#endif
+
 
   // raytracing is initiated from here
   void start()
@@ -103,7 +89,7 @@ public :
     Box testBox(math3d::point(.3,.3,.3),math3d::point(.4,.5,.6));
     Sphere testSphere (math3d::point(.3,.3,.3),.4);
 
-    SdfReader sdfReader ("samples/example1.sdf");
+    SdfReader sdfReader ("samples/sample1.sdf");
 
 
 
