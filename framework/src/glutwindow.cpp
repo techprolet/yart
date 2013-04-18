@@ -2,22 +2,14 @@
 #include "glutwindow.hpp"
 
 // header, system
-#if WIN32
-  #include <time.h>
-  #include <windows.h>
-#else
-  #include <sys/time.h>
-#endif
+#include <sys/time.h>
 
-#ifdef __APPLE__
-  #include <GLUT/glut.h>
-#else
-  #include <GL/glut.h>
-#endif
+#include <GL/glut.h>
 
 #include <iostream>
 #include <cassert>
-
+//following added to remedy error: ‘usleep’ was not declared in this scope
+#include <unistd.h>
 // header, project
 
 // globals
