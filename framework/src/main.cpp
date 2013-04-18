@@ -165,21 +165,12 @@ int main(int argc, char* argv[])
   application app;
 
   // start computation in thread
-#if CODEBLOCKS_WIN32
-  DWORD thread_id;
-  HANDLE thread_handle = CreateThread(NULL, 0, &application::invoke, reinterpret_cast<void*>(&app), 0, &thread_id);
-#else
   boost::thread thr(boost::bind(&application::start, &app));
-#endif
 
   // start output on glutwindow
   glutwindow::instance().run();
 
   // wait on thread
-#if CODEBLOCKS_WIN32
-  CloseHandle(thread_handle);
-#else
   thr.join();
-#endif
   return 0;
 }
