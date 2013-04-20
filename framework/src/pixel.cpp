@@ -5,7 +5,7 @@
 #include <ostream>
 
 
-pixel::pixel(std::size_t a, std::size_t b)
+Pixel::Pixel(std::size_t a, std::size_t b)
   : x(a),
     y(b),
     rgb()
@@ -13,13 +13,13 @@ pixel::pixel(std::size_t a, std::size_t b)
 
 
 ///////////////////////////////////////////////////////////////////////////////
-pixel::~pixel()
+Pixel::~Pixel()
 {}
 
 
 ///////////////////////////////////////////////////////////////////////////////
 void
-pixel::print(std::ostream& os) const
+Pixel::print(std::ostream& os) const
 {
   os << "pixel[" << (int)x << ',' << (int)y << "]("
      << rgb[0] << ','
@@ -30,7 +30,7 @@ pixel::print(std::ostream& os) const
 
 ///////////////////////////////////////////////////////////////////////////////
 std::ostream&
-operator<<(std::ostream& os, const pixel& a)
+operator<<(std::ostream& os, const Pixel& a)
 {
   std::ostream::sentry cerberus (os);
   if (cerberus)

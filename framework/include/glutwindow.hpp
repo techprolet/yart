@@ -13,7 +13,7 @@
 
 class glutwindow {
 public : // typedefs, enums
-  typedef std::vector<color> colorbuffer_t;
+  typedef std::vector<Color> colorbuffer_t;
   
   ~glutwindow();
 
@@ -36,7 +36,7 @@ public : // methods
 		               int argc, char* argv[]);
 	static glutwindow& instance();
 		               
-  void write(const pixel& p);
+  void write(const Pixel& p);
   void update();
   void run();
 

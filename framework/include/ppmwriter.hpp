@@ -17,7 +17,7 @@ public:
   ~ppmwriter();
 
 public:
-  void write(pixel const& p);
+  void write(Pixel const& p);
   void save(std::string const& file);
   void save();
 

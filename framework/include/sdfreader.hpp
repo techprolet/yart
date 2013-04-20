@@ -12,18 +12,22 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
+
+#include "scene.hpp"
 
 class SdfReader{
 public:
 	SdfReader();
-	SdfReader(char* sdfFile);
+	SdfReader(std::string sdfFile);
 	virtual ~SdfReader();
 
-	void load (char* sdfFile);
+	void load (std::string sdfFile);
 
 private:
-	void loadSdf();
-	char* sdfFile_;
+	Scene * loadSdf();
+	std::vector<std::string> parseArguments(std::stringstream& ss);
+	std::string sdfFile_;
 };
 
 #endif /* SDFREADER_HPP_ */

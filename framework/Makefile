@@ -29,11 +29,17 @@ HEADER =\
 	include/vector.hpp \
 	include/point.hpp \
 	include/matrix.hpp \
+	include/isceneobject.hpp \
+	include/sceneobject.hpp \
 	include/shape.hpp \
 	include/box.hpp \
 	include/sphere.hpp \
 	include/sdfreader.hpp \
-        $(NULL)
+	include/material.hpp \
+	include/camera.hpp \
+	include/light.hpp \
+	include/scene.hpp \
+    $(NULL)
 
 SOURCE =\
 	src/glutwindow.cpp \
@@ -44,10 +50,15 @@ SOURCE =\
 	src/vector.cpp \
 	src/matrix.cpp \
 	src/main.cpp \
+	src/sceneobject.cpp \
 	src/shape.cpp \
 	src/box.cpp \
 	src/sphere.cpp \
 	src/sdfreader.cpp \
+	src/material.cpp \
+	src/camera.cpp \
+	src/light.cpp \
+	src/scene.cpp \
 	$(NULL)
 
 PROGRAMSOURCE =\

@@ -8,11 +8,11 @@
 #include <color.hpp>
 
 
-class pixel {
+class Pixel {
 public : // c'tor
 
-  pixel(std::size_t = 0, std::size_t = 0);
-  ~pixel();
+  Pixel(std::size_t = 0, std::size_t = 0);
+  ~Pixel();
 
 public : // methods
 
@@ -22,9 +22,9 @@ public : // member
 
   std::size_t x;
   std::size_t y;
-  color       rgb;
+  Color       rgb;
 };
 
-std::ostream& operator<<(std::ostream&, const pixel&);
+std::ostream& operator<<(std::ostream&, const Pixel&);
 
 #endif // BUW_PIXEL_HPP

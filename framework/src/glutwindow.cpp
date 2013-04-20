@@ -92,7 +92,7 @@ glutwindow::height() const {
 
 ////////////////////////////////////////////////////////////////////////////////
 void
-glutwindow::write(const pixel& p)
+glutwindow::write(const Pixel& p)
 {
   // flip pixels, because of opengl glDrawPixels
   size_t buf_pos = (width_*p.y + (p.x));

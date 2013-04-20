@@ -53,15 +53,15 @@ public :
     for (std::size_t y = 0; y < window.height(); ++y) {
       for (std::size_t x = 0; x < window.width(); ++x) {
         // create pixel at x,y
-        pixel p(x, y);
+        Pixel p(x, y);
 
         example_math3d();
 
         // compute color for pixel
         if ( ((x/checkersize)%2) != ((y/checkersize)%2)) {
-	        p.rgb = color(0.0, 1.0, float(x)/window.height());
+	        p.rgb = Color(0.0, 1.0, float(x)/window.height());
         } else {
-          p.rgb = color(1.0, 0.0, float(y)/window.width());
+          p.rgb = Color(1.0, 0.0, float(y)/window.width());
         }
 
         // write pixel to output window

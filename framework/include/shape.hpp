@@ -2,21 +2,26 @@
 #define SHAPE_H
 #include <string>
 #include <iostream>
-#include <point.hpp>
-#include <color.hpp>
+#include "point.hpp"
+#include "sceneobject.hpp"
+#include "material.hpp"
 
-class Shape
+class Shape :public SceneObject
 {
 public:
-    virtual double getVolume()  const = 0;
-    virtual double getSurface() const = 0;
-    virtual bool isInside(const math3d::point & p) const = 0;
+//    virtual double getVolume()  const = 0;
+//    virtual double getSurface() const = 0;
+//    virtual bool isInside(const math3d::point & p) const = 0;
+
+
+
+    virtual void translate (double x, double y, double z) = 0;
+    virtual void rotate (double ankle, double x, double y, double z) = 0;
+
+
     virtual std::ostream& printOn (std::ostream & out)       const;
 
-
-
-    color getcolor()        const;
-    std::string getName()   const;
+    Material * getMaterial()        const;
 
 
 
@@ -36,11 +41,10 @@ public:
 
 protected:
     Shape();
-    Shape(const color & color, const std::string & name);
+    Shape(Material * material_);
 
 private:
-    color color_;
-    std::string name_;
+    Material * material;
 };
 
 

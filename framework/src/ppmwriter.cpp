@@ -12,7 +12,7 @@ ppmwriter::ppmwriter(std::size_t w, std::size_t h, std::string const& file)
   : file_(file),
     width_(w),
     height_(h) {
-  data_.resize(w * h * (sizeof(color)/sizeof(color::value_t)));
+  data_.resize(w * h * (sizeof(Color)/sizeof(Color::value_t)));
 }
 
 
@@ -21,7 +21,7 @@ ppmwriter::ppmwriter(std::size_t w, std::size_t h)
   : file_("untitled.ppm"),
     width_(w),
     height_(h) {
-  data_.resize(w*h*(sizeof(color)/sizeof(color::value_t)));
+  data_.resize(w*h*(sizeof(Color)/sizeof(Color::value_t)));
 }
 
 
@@ -31,11 +31,11 @@ ppmwriter::~ppmwriter()
 
 
 ////////////////////////////////////////////////////////////////////////////////
-void ppmwriter::write(pixel const& p)
+void ppmwriter::write(Pixel const& p)
 {
   size_t buf_pos = width_* (height_-1-p.y) + p.x;
-  std::size_t pos = (sizeof(color)/sizeof(color::value_t)) * buf_pos;
-  if (pos + ((sizeof(color)/sizeof(color::value_t)) - 1) > data_.size() || (int)buf_pos < 0) {
+  std::size_t pos = (sizeof(Color)/sizeof(Color::value_t)) * buf_pos;
+  if (pos + ((sizeof(Color)/sizeof(Color::value_t)) - 1) > data_.size() || (int)buf_pos < 0) {
     std::cerr << "Fatal Error ppmwriter::write(pixel p) : Critical write position\n";
   } else {
     data_[pos] = (unsigned int)std::max(0.0, std::min(255.0 * p.rgb[0], 255.0));
