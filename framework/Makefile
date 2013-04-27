@@ -39,6 +39,7 @@ HEADER =\
 	include/camera.hpp \
 	include/light.hpp \
 	include/scene.hpp \
+	include/ray.hpp \
     $(NULL)
 
 SOURCE =\
@@ -59,6 +60,7 @@ SOURCE =\
 	src/camera.cpp \
 	src/light.cpp \
 	src/scene.cpp \
+	src/ray.cpp \
 	$(NULL)
 
 PROGRAMSOURCE =\

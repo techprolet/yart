@@ -2,6 +2,7 @@
 #define SPHERE_H
 
 #include "shape.hpp"
+#include "ray.hpp"
 
 class Sphere : public Shape
 {
@@ -21,6 +22,8 @@ public:
 
     void translate (double x, double y, double z);
     void rotate (double ankle, double x, double y, double z);
+
+    double intersectedBy(const Ray & ray) const;
 
     std::ostream& printOn (std::ostream & out)       const;
 

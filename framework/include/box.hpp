@@ -21,6 +21,7 @@ public:
 
 
 
+    double intersectedBy(const Ray & ray) const;
 
 
     std::ostream& printOn (std::ostream & out)       const;

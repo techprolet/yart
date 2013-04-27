@@ -33,10 +33,11 @@ class application
 public :
 
 
-
   // raytracing is initiated from here
   void start()
   {
+
+/*
     // the following code might also be executed in any method
     // just start your raytracing algorithm from here
 
@@ -74,7 +75,7 @@ public :
 
 
 
-
+*/
 
 
 
@@ -89,7 +90,7 @@ public :
     Box testBox(math3d::point(.3,.3,.3),math3d::point(.4,.5,.6));
     Sphere testSphere (math3d::point(.3,.3,.3),.4);
 
-    SdfReader sdfReader ("samples/sample1.sdf");
+    SdfReader sdfReader ("samples/sample2.sdf");
 
 
 
@@ -116,9 +117,10 @@ public :
 
 
 
-
+/*
     // save final image
     image.save();
+*/
   }
 
   // this method shows how to use the supplied classes for matrix, point and vector
@@ -154,12 +156,12 @@ private : // attributes
 
 int main(int argc, char* argv[])
 {
-  // set resolution and checkersize
-  const std::size_t width = 800;
-  const std::size_t height = 600;
-
-  // create output window
-  glutwindow::init(width, height, 100, 100, "CheckerBoard", argc, argv);
+//  // set resolution and checkersize
+//  const std::size_t width = 800;
+//  const std::size_t height = 600;
+//
+//  // create output window
+//  glutwindow::init(width, height, 100, 100, "CheckerBoard", argc, argv);
 
   // create a ray tracing application
   application app;
@@ -167,8 +169,8 @@ int main(int argc, char* argv[])
   // start computation in thread
   boost::thread thr(boost::bind(&application::start, &app));
 
-  // start output on glutwindow
-  glutwindow::instance().run();
+//  // start output on glutwindow
+//  glutwindow::instance().run();
 
   // wait on thread
   thr.join();

@@ -5,6 +5,7 @@
 #include "point.hpp"
 #include "sceneobject.hpp"
 #include "material.hpp"
+#include "ray.hpp"
 
 class Shape :public SceneObject
 {
@@ -24,17 +25,11 @@ public:
     Material * getMaterial()        const;
 
 
+    virtual double intersectedBy(const Ray & ray) const = 0;
 
 
 
 
-
-
-
-    friend std::ostream & operator<<(std::ostream& lhs, const Shape & rhs)
-    {
-      return rhs.printOn(lhs);
-    }
 
     virtual ~Shape();
 

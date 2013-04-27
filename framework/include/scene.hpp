@@ -24,8 +24,11 @@ public:
 	Shape* getShape(std::string shapeName);
 	Material* getMaterial(std::string materialName);
 
-	SceneObject * getObjectByName(std::string objectName);
-
+	SceneObject * getObject(std::string objectName);
+	Shape * getShape (int index);
+	int getShapesSize() const;
+	Camera * getCamera(std::string objectName);
+	void render(std::string cameraName,std::string fileName, int width, int height);
 	virtual ~Scene();
 
 

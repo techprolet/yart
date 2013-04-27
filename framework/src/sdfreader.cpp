@@ -82,14 +82,17 @@ Scene * SdfReader::loadSdf(){
 
 			} else if (cmd[0]== "transform"){
 				std::cout<<"Transform: "<<sdfLine<<std::endl;
-				SceneObject * sceneObject = scene->getObjectByName(cmd[1]);
+				SceneObject * sceneObject = scene->getObject(cmd[1]);
 				if (cmd[2]=="rotate"){
 					sceneObject->rotate(atof(cmd[3].c_str()),atof(cmd[4].c_str()),atof(cmd[5].c_str()),atof(cmd[6].c_str()));
 				} else if (cmd[2]=="translate"){
 						sceneObject->translate(atof(cmd[3].c_str()),atof(cmd[4].c_str()),atof(cmd[5].c_str()));
-					}
+				}
+//				std::cout<<sceneObject<<std::endl;
+				sceneObject->printOn(std::cout);
 			} else if (cmd[0]== "render"){
 				std::cout<<"Render: "<<sdfLine<<std::endl;
+				scene->render(cmd[1],cmd[2], atoi(cmd[3].c_str()),atoi(cmd[4].c_str()));
 			} else {
 				std::cout<<"Unknown command: "<<sdfLine<<std::endl;
 			}

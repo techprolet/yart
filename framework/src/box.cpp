@@ -1,4 +1,5 @@
 #include "box.hpp"
+#include "matrix.hpp"
 
 Box::Box():
     Shape(),
@@ -82,19 +83,43 @@ Box::Box(const Box & copy):
 
 void
 Box::translate (double x, double y, double z){
-
+	math3d::matrix translationMatrix = getTranslationMatrix(x,y,z);
+	for (int i = 0;i<8;++i){
+		vertices[i] = translationMatrix * vertices[i];
+	}
 }
 
 void
 Box::rotate (double ankle, double x, double y, double z){
-
+	math3d::matrix rotationMatrix = getRotationMatrix(ankle, x, y, z);
+	for (int i = 0;i<8;++i){
+		vertices[i] = rotationMatrix * vertices[i];
+	}
 }
+
+
+
+double
+Box::intersectedBy(const Ray & ray) const{
+	return 0.0;
+}
+
+
+
+
+
+
+
 math3d::vector& Box::operator [](const unsigned thisVertex){
     return vertices[thisVertex];
 }
 const math3d::vector & Box::operator [](const unsigned thisVertex)    const{
     return vertices[thisVertex];
 }
+
+
+
+
 
 
 std::ostream & Box::printOn(std::ostream &out) const{
